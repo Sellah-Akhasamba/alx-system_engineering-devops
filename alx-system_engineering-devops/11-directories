@@ -1,0 +1,10 @@
+#!/bin/bash
+count=0
+
+# Traverse all directories and subdirectories recursively
+find . -type d -not -path "./.*" -not -path "." -not -path ".." -print0 |
+while IFS= read -r -d '' directory; do
+  ((count++))
+done
+
+echo "$count"
