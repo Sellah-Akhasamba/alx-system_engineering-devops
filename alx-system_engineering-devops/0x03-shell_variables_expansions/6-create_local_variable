@@ -1,0 +1,4 @@
+#!/bin/bash
+
+BEST="School"
+echo "New local variable created: BEST=$BEST"

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+binary="$BINARY"
+decimal=0
+power=0
+
+# Reversing the binary number
+reversed_binary=$(echo "$binary" | rev)
+
+# Iterating over each digit in the reversed binary number
+for (( i=0; i<${#reversed_binary}; i++ )); do
+    digit="${reversed_binary:$i:1}"
+    if [[ "$digit" == "1" ]]; then
+        decimal=$((decimal + 2**power))
+    fi
+    power=$((power + 1))
+done
+
+echo $decimal
